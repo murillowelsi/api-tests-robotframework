@@ -26,3 +26,15 @@ Confere sucesso na requisição
 Confere dados do usuário
     [Arguments]       ${RESULT}                              ${USERNAME}
     Should Be True    '${RESULT['login']}'=='${USERNAME}'
+
+Criar novo repositório com nome "${REPO_NAME}"
+    ${BODY}                          Format String                 ${DATA}/post_createrepo.json
+    ...                              user_git=${MY_GITHUB_USER}
+    ...                              repo_name=${REPO_NAME}
+    Log                              Meu body ficou:\n${BODY}
+    ${RESPONSE}                      Post Request                  alias=mygithubAuth              uri=${REPOS_URI}    data=${BODY}
+    Confere sucesso na requisição    ${RESPONSE}
+
+Deletar repositório
+    [Arguments]         ${REPO_NAME}
+    Delete Request    alias=mygithubAuth    uri=${REPO_DELETE_URI}/${REPO_NAME}

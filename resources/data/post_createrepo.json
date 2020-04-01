@@ -1,0 +1,9 @@
+{{
+    "name": ["{repo_name}"],
+    "description": "Create Repository with Robotframework",
+    "homepage": "https://github.com",
+    "private": false,
+    "has_issues": true,
+    "has_projects": true,
+    "has_wiki": true
+}}
