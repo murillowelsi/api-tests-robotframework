@@ -12,6 +12,11 @@ List Repos
     No Auth Connection
     List User Repositories
 
+Search Repositories
+    [Tags]                      search
+    No Auth Connection
+    Search Repositories With    robot     RobotFramework
+
 *** Keywords ***
 Input My User And Pass
     ${MY_USER_DATA}          Get Request           alias=mygithubAuth        uri=/user
@@ -24,3 +29,9 @@ List User Repositories
     ${REPOS}      Get Request                  alias=mygithub     uri=/users/${MY_GITHUB_USER}/repos
     ${RESULT}=    Set Variable                 ${REPOS.json()}
     Log           ${RESULT[0]['full_name']}
+
+Search Repositories With
+    [Arguments]     ${QUERY}                     ${LANGUAGE}
+    ${PARAMS}       Set Variable                 q=${QUERY}+language:${LANGUAGE}&sort=stars&order=desc
+    ${REPO_LIST}    Get Request                  alias=mygithub                                            uri=${SEARCH_REPO_URI}?${PARAMS}
+    Log             Repos List: ${REPO_LIST.json()} 
