@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running regression tests!'
-                sh 'robot -d ./results .'
+                sh 'robot .'
             }
         }
         stage('UAT') {
