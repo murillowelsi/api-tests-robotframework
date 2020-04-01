@@ -5,9 +5,9 @@ Resource    ../../resources/keywords.robot
 
 
 *** Test Cases ***
-Create a repository
-    [Tags]                                               deleterepo
-    Conectar com autenticação básica na API do GitHub
-    Criar novo repositório com nome "deletar-repo"
-    Deletar repositório                      -deletar-repo-
+Delete a Github Repository
+    [Tags]                                        deleterepo
+    Basic Auth Connection
+    Create Repository With Name "deletar-repo"
+    Delete Repository                             -deletar-repo-
 
