@@ -25,13 +25,13 @@ Check User Data
     Should Be True    '${RESULT['login']}'=='${USERNAME}'
 
 Create Repository With Name "${REPO_NAME}"
-    ${BODY}                          Format String                 ${DATA}/post_createrepo.json
-    ...                              user_git=${MY_GITHUB_USER}
-    ...                              repo_name=${REPO_NAME}
-    Log                              Meu body ficou:\n${BODY}
-    ${RESPONSE}                      Post Request                  alias=mygithubAuth              uri=${REPOS_URI}    data=${BODY}
+    ${BODY}                  Format String                 ${DATA}/post_createrepo.json
+    ...                      user_git=${MY_GITHUB_USER}
+    ...                      repo_name=${REPO_NAME}
+    Log                      Meu body ficou:\n${BODY}
+    ${RESPONSE}              Post Request                  alias=mygithubAuth              uri=${REPOS_URI}    data=${BODY}
     Check Request Success    ${RESPONSE}
 
 Delete Repository
-    [Arguments]         ${REPO_NAME}
+    [Arguments]       ${REPO_NAME}
     Delete Request    alias=mygithubAuth    uri=${REPO_DELETE_URI}/${REPO_NAME}
