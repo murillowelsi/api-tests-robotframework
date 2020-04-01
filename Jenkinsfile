@@ -14,6 +14,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running regression tests!'
+                sh 'pwd'
+                sh 'robot -v'
                 sh 'robot .'
             }
         }
