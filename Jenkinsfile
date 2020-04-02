@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "robotframework/rfdocker"
+            image "murillowelsi/pyhton3"
         }
     }
     
