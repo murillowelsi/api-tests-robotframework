@@ -1,3 +1,3 @@
 *** Variables ***
-${MY_GITHUB_USER}       usergit
-${MY_GITHUB_PASS}       passgit
+${MY_GITHUB_USER}       murillo.welsi.qa
+${MY_GITHUB_PASS}       TesteQA123
