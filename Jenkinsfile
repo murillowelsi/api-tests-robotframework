@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Running regression tests!'
                 sh 'pwd'
-                sh 'cd /var/jenkins_home/workspace/robot-api-tests && robot -d ./resullts/ .'
+                sh 'robot -d ./resullts/ .'
             }
         }
         stage('UAT') {
