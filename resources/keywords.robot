@@ -4,7 +4,7 @@ Documentation    Exemplos da Library Requests: https://github.com/bulkan/robotfr
 Library          RequestsLibrary
 Library          Collections
 Library          String
-Resource         ./user_pass.robot
+Resource         ./credentials.robot
 Resource         ./environments.robot
 
 *** Keywords ***
