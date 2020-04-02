@@ -15,6 +15,9 @@ pipeline {
             steps {
                 echo 'Running regression tests!'
                 sh 'pwd'
+                sh 'echo "*** Variables ***" >> ./resources/credentials.robot'
+                sh 'echo "$""{MY_GITHUB_USER} ""      userdogit" >> ./resources/credentials.robot'
+                sh 'echo "$""{MY_GITHUB_PASS} ""      senhadogit" >> ./resources/credentials.robot'
                 sh 'robot -d ./resullts/ .'
             }
         }
